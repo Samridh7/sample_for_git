@@ -2,7 +2,7 @@ const express = require("express");
 const { engine }  = require('express-handlebars');
 const path = require("path");
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 // app.engine('handlebars', exphbs());
 // app.set('view engine', 'handlebars');
@@ -13,6 +13,6 @@ app.set('view engine', 'handlebars');
 
 app.use("/", require(path.join(__dirname, "routes/blog.js")));
 
-app.listen(port, () => {
-    console.log(`server started at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`server started at http://localhost:${PORT}`);
 });
